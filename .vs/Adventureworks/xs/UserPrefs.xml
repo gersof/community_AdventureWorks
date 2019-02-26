@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{1F8E7338-95B4-45D5-8176-7E4155258BC5}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Infraestructure/Product.cs">
+    <Files>
+      <File FileName="Adventureworks/Startup.cs" Line="1" Column="1" />
+      <File FileName="Infraestructure/Class1.cs" Line="1" Column="1" />
+      <File FileName="Infraestructure/AdventureWorks2017Context.cs" Line="1" Column="1" />
+      <File FileName="Infraestructure/Currency.cs" Line="1" Column="1" />
+      <File FileName="Infraestructure/CurrencyRate.cs" Line="15" Column="1" />
+      <File FileName="Infraestructure/Customer.cs" Line="1" Column="1" />
+      <File FileName="Infraestructure/Product.cs" Line="6" Column="33" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Adventureworks" expanded="True" selected="True" />
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Adventureworks PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
