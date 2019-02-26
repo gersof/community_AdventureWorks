@@ -2,7 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Infraestructure
+
+namespace Infrastructure
 {
     public partial class AdventureWorks2017Context : DbContext
     {
