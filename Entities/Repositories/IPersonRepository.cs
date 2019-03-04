@@ -6,6 +6,7 @@ namespace Infrastructure.Repositories
     public interface IPersonRepository
     {
         Task<ICollection<Person>> GetAllPersons();
+        Task<Person> GetByPersonId(int id);
 
     }
 }

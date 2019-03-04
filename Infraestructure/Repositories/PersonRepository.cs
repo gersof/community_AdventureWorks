@@ -16,5 +16,10 @@ namespace Infrastructure.Repositories
             var result = await Query().ToListAsync();
             return result;
         }
+        public async Task<Person> GetByPersonId(int id)
+        {
+            var result = await Query().FirstOrDefaultAsync();
+            return result;
+        }
     }
 }

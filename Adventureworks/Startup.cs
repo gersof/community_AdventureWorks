@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 using Adventureworks.Core.MiddleWare;
 using Adventureworks.Core.Supervisor.Classes;
 using Adventureworks.Core.Supervisor.Interfaces;
+using Adventureworks.Models;
+using GraphiQl;
+using GraphQL;
+using GraphQL.Types;
 using Infrastructure;
 using Infrastructure.Repositories;
 using Microsoft.AspNetCore.Builder;
@@ -41,11 +45,19 @@ namespace Adventureworks
             services.AddScoped<IPersonSupervisor,PersonSupervisor>();
             // Add framework services.
             services.AddMvc();
-
-
+            
             services.AddDbContext<AdventureWorks2017Context>(options =>
                 options.UseSqlServer(connectionString).EnableSensitiveDataLogging()
             );
+
+            services.AddTransient<IPersonRepository, PersonRepository>();
+            services.AddSingleton<IDocumentExecuter, DocumentExecuter>();
+            services.AddSingleton<AdventureWorksQuery>();
+            services.AddSingleton<AdventureWorksMutation>();
+            services.AddSingleton<PersonType>();
+            services.AddSingleton<PersonInputType>();
+            var sp = services.BuildServiceProvider();
+            services.AddSingleton<ISchema>(new AdventureWorksSchema(new FuncDependencyResolver(type => sp.GetService(type))));
 
 
             services.AddSwaggerGen(c =>
@@ -69,7 +81,10 @@ namespace Adventureworks
             loggerFactory.AddDebug();
             app.UseMiddleware<ErrorHandlerMiddleware>();
 
+            app.UseGraphiQl();
+
             app.UseMvc();
+
         }
     }
 }
